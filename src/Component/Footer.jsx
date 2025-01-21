@@ -1,14 +1,13 @@
-
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-5">
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                        <img src="/berita-kini-white.svg" alt="Logo" style={{ marginRight: "20px", width: "50px"}} className="logo"/>
-                        <h3 style={{ margin: 0 }}>Berita Kini</h3>
-                    </div>
+                    <div className="col-md-12 col-sm-12 col-lg-5">
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <img src="/icon/berita-kini-white.svg" alt="Logo" style={{ marginRight: "20px", width: "50px"}} className="logo"/>
+                            <h3 style={{ margin: 0 }}>Berita Kini</h3>
+                        </div>
                         <div className="row">
                             <div className="col-8">
                                 <p className="mt-3">© 2025 Berita Kini. All Rights Reserved.</p>
@@ -18,23 +17,23 @@ const Footer = () => {
                         <ul className="nav" style={{ marginLeft: "-15px", marginTop: "-20px"}}>
                             <li className="nav-item">
                                 <a href="" className="nav-link">
-                                    <img src="/youtube.svg" alt="YouTube" style={{width: "80%"}}/>
+                                    <img src="/icon/youtube.svg" alt="YouTube" style={{width: "80%"}}/>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a href="" className="nav-link">
-                                    <img src="/instagram.svg" alt="Instagram" style={{width: "80%"}}/>
+                                    <img src="/icon/instagram.svg" alt="Instagram" style={{width: "80%"}}/>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a href="" className="nav-link">
-                                    <img src="/facebook.svg" alt="Facebook" style={{width: "80%"}}/>
+                                    <img src="/icon/facebook.svg" alt="Facebook" style={{width: "80%"}}/>
                                 </a>
                             </li>
                         </ul>
                         <br/>
                     </div>
-                    <div className="col-2">
+                    <div className="col-md-6 col-sm-6 col-lg-2">
                         <h5 className="mb-4">Telusuri</h5>
                         <ul className="list-unstyled">
                             <li><a href="">Beranda</a></li>
@@ -47,7 +46,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="col-2">
+                    <div className="col-md-6 col-sm-6 col-lg-2">
                         <h5 className="mb-4">Bantuan</h5>
                         <ul className="list-unstyled">
                             <li><a href="">Kontak Kami</a></li>
@@ -56,7 +55,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="col-md-3">
+                    <div className="col-md-12 col-sm-12 col-lg-3">
                         <h5 className="text-md-right">Berlangganan Berita Terbaru</h5>
                         <hr/>
                         <form>
@@ -72,7 +71,7 @@ const Footer = () => {
                                     color: "white", border: "none",
                                     display: "flex",
                                     justifyContent: "center", alignItems: "center",}}>
-                                    <img src="send.svg" alt="send" style={{ width: "20px" }}/>
+                                    <img src="/icon/send.svg" alt="send" style={{ width: "20px" }}/>
                                 </button>
                             </div>
                         </form>

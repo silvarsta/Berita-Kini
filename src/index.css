@@ -127,7 +127,6 @@
 }
 
 @media (max-width: 767px) {
-  
   .header-area {
     box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
   }
@@ -192,7 +191,6 @@
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -258,6 +256,17 @@
   top: -31px;
 }
 
+
+/* HEADLINE */
+/* .headline{
+  border-style: none;
+} */
+
+.card-title{
+  color: grey;
+  font-weight: 500;
+}
+
 /* FOOTER */
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
 
@@ -273,25 +282,36 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 300px;
+  margin-bottom: 400px;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 300px;
+  height: 400px;
 }
 
 /* Taller footer on small screens */
-@media (max-width: 567em) {
-    body {
-      margin-bottom: 700px;
-    }
-    .footer {
-      height: 700px;
-    }
+@media (max-width: 567px) {
+  body {
+    margin-bottom: 890px;
+  }
+  .footer {
+    height: 890px;
+  }
 }
+
+/* Taller footer on medium screens */
+@media (min-width: 568px) and (max-width: 1024px) {
+  body {
+    margin-bottom: 720px;
+  }
+  .footer {
+    height: 720px;
+  }
+}
+
 
 /* Sticky footer style and color
 -------------------------------------------------- */
