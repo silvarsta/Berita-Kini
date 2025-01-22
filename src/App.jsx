@@ -1,19 +1,15 @@
-import Footer from "./Component/Footer"
-import Headline from "./Component/Headline"
-import Populer from "./Component/Populer"
-import Rekomendasi from "./Component/Rekomendasi"
-import Navbar from "./Component/Navbar"
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Beranda from "./Page/Beranda";
+import DetailBerita from "./Page/DetailBerita"
 const App = () => {
     return (
-        <div>
-            <Navbar/>
-            <Headline/>
-            <Populer/>
-            <Rekomendasi/>
-            <Footer/>
-        </div>
-    )
+        <Router>
+            <Routes>
+                <Route path="/" element={<Beranda />} />
+                <Route path="/berita" element={<DetailBerita />} />
+            </Routes>
+        </Router>
+    );
 }
 
-export default App
+export default App;

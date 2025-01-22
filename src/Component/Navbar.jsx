@@ -1,38 +1,54 @@
-const Navbar = () => {
-    return (
-        <header>
-            <div className="header-area">
-                <div className="main-header ">
-                    <div className="header-bottom header-sticky">
-                        <div className="container">
-                            <div className="navbar d-flex align-items-center justify-content-between">
-                                {/* Logo */}
-                                <div className="sticky-logo" style={{ display: "flex", alignItems: "center" }}>
-                                    <a href="index.html" style={{ textDecoration: "none", color: "black", display: "flex", alignItems: "center" }}>
-                                        <img src="icon/berita-kini.svg" alt="Logo" style={{ marginRight: "10px" }} />
-                                        <h4 style={{ marginLeft: "10px", marginTop: "8px"}}>Berita Kini</h4>
-                                    </a>
-                                </div>
-                                {/* Main menu */}
-                                <div className="main-menu d-flex">
-                                    <nav>
-                                        <ul id="navigation" className="d-flex list-unstyled m-0">
-                                            <li><a href="#" style={{ color: "#006aff" }}>Beranda</a></li>
-                                            <li><a href="#">Terbaru</a></li>
-                                            <li><a href="#">Hiburan</a></li>
-                                            <li><a href="#">Gaya Hidup</a></li>
-                                            <li><a href="#">Olahraga</a></li>
-                                            <li><a href="#">Nasional</a></li>
-                                            <li><a href="#">Internasional</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
+import { useState, useEffect } from 'react';
+import Logo from '../assets/img/berita-kini.svg';
+import LogoNavbar from '../assets/img/berita-kini-white.svg';
+
+export const Navbar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+        useEffect(() => {
+            const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true); // Aktifkan state saat scroll lebih dari 50px
+            } else {
+                setIsScrolled(false); // Nonaktifkan state
+            }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+            window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+
+        return (
+            <header id="header" className={`header ${isScrolled ? 'scrolled' : ''} mb-5`}>
+                <div className="container">
+                    <div className="header-content">
+                    <a href="/" className="logo">
+                        <img
+                        src={isScrolled ? LogoNavbar : Logo}
+                        alt="Logo"
+                        className={`logo-img ${isScrolled ? 'small' : ''}`}
+                        />
+                    <h4 className={`website-name ${isScrolled ? 'small' : ''} mx-4 mt-3`}>
+                        Berita Kini
+                    </h4>
+                    </a>
+                    <nav className="navmenu">
+                        <ul>
+                        <li><a href="/" className="active">Beranda</a></li>
+                        <li><a href="#terbaru">Terbaru</a></li>
+                        <li><a href="#hiburan">Hiburan</a></li>
+                        <li><a href="#gaya-hidup">Gaya Hidup</a></li>
+                        <li><a href="#olahraga">Olahraga</a></li>
+                        <li><a href="#nasional">Nasional</a></li>
+                        <li><a href="#internasional">Internasional</a></li>
+                        </ul>
+                    </nav>
                     </div>
                 </div>
-            </div>
-        </header>
-    )
-}
-export default Navbar
+            </header>
+    );
+};
+
+export default Navbar;
