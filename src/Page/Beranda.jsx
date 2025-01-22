@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Navbar from "../Component/Navbar";
-import Populer from "../Component/Populer";
+import Populer from "../Component/PopulerB";
 import Rekomendasi from "../Component/Rekomendasi";
 import Iklan from "../Component/Iklan";
 import Footer from "../Component/Footer";
@@ -63,7 +63,7 @@ const Beranda = () => {
           "https://api-berita-indonesia.vercel.app/antara/terbaru"
           );
           const data = await response.json();
-          setPopuler(data.data.posts.slice(0, 10) || []);
+          setPopuler(data.data.posts.slice(0, 3) || []);
       } catch (error) {
           console.error("Error fetching populer:", error);
       }
@@ -109,9 +109,7 @@ const Beranda = () => {
           Berita Terpopuler
         </h2>
         <div className="d-flex flex-wrap" style={{ gap: "20px", justifyContent: "space-between" }} >
-          {Berita.map((news) => (
-            <Populer key={news.id} data={news} />
-          ))}
+          <Populer populer={populer} />
         </div>
       </div>
       </div>
@@ -123,7 +121,7 @@ const Beranda = () => {
             Rekomendasi Untuk Anda
           </h2>
         </div>
-        <Rekomendasi recommendations={Berita} />
+        <Rekomendasi recommendations={recommendations} />
       </div>
 
       {/* Iklan Section */}

@@ -107,9 +107,6 @@ const DetailBerita = () => {
                 />
                 Berita Terpopuler
                 </h2>
-                {/* {populer.map((news, index) => (
-                <Populer key={index} data={news} />
-                ))} */}
                 <Populer populer={populer} />
             </div>
             </div>
